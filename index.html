@@ -5,10 +5,77 @@
     <link rel="icon" type="image/png" href="/logo-fmf.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>分秒帧影视 | 影视制作 · AI 创意工作室</title>
-    <script type="module" crossorigin src="/assets/index-DrqcV1tS.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DQwdbO-5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.cn" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.cn/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" crossorigin href="/assets/index-DQwdbO-5.css" />
+    <style>
+      .static-fallback {
+        min-height: 100vh;
+        background: #0a0a0a;
+        color: #f0f0f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 24px;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .static-fallback .logo { height: 100px; width: auto; margin-bottom: 32px; border-radius: 8px; }
+      .static-fallback h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
+      .static-fallback .sub { font-size: 16px; color: #8a8a92; margin-bottom: 6px; }
+      .static-fallback .tagline { font-size: 14px; color: #5a5a62; margin-bottom: 32px; line-height: 1.8; }
+      .static-fallback .links { display: flex; flex-direction: column; gap: 10px; align-items: center; margin-bottom: 24px; }
+      .static-fallback .links a { color: #7dd3fc; text-decoration: none; font-size: 15px; padding: 10px 24px; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; }
+      .static-fallback .qr { height: 160px; width: 160px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px; }
+      .static-fallback .qr-tip { font-size: 13px; color: #5a5a62; }
+      .static-fallback footer { margin-top: 40px; font-size: 12px; color: #5a5a62; }
+      .static-fallback footer a { color: #7dd3fc; text-decoration: none; }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DrqcV1tS.js" onerror="document.getElementById('static-fallback').style.display='flex'"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="static-fallback" id="static-fallback" style="display:none">
+        <img class="logo" src="/logo-fmf.png" alt="分秒帧影视" />
+        <h1>分秒帧影视</h1>
+        <p class="sub">影视制作 · AI 创意工作室</p>
+        <p class="tagline">融合影视制作 · AI 技术 · 创意策划<br/>以帧为单位的精准创作</p>
+        <div class="links">
+          <a href="mailto:tongnian083@outlook.com">📧 tongnian083@outlook.com</a>
+          <a href="tel:18838132328">📱 18838132328</a>
+          <span style="color:#8a8a92;font-size:14px;">微信：njfmz1</span>
+        </div>
+        <img class="qr" src="/wechat-qr.jpg" alt="微信二维码" />
+        <p class="qr-tip">微信扫码 · 随时沟通</p>
+        <footer>© 2026 分秒帧影视 FenMiaoZFilm. All rights reserved.<br/><a href="https://www.fmzfilm.cn">www.fmzfilm.cn</a></footer>
+      </div>
+    </div>
+    <script>
+      // 安全网：如果 React 5 秒内未挂载，显示回退页面
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        var fb = document.getElementById('static-fallback');
+        if (!root || !fb) return;
+        var hasReactContent = false;
+        for (var i = 0; i < root.children.length; i++) {
+          if (root.children[i].id !== 'static-fallback') {
+            hasReactContent = true;
+            break;
+          }
+        }
+        if (!hasReactContent) {
+          fb.style.display = 'flex';
+          console.warn('[分秒帧影视] React 未能挂载，已显示回退页面');
+        }
+      }, 5000);
+      // 捕获 JS 运行时错误
+      window.addEventListener('error', function(e) {
+        console.error('[分秒帧影视] JS Error:', e.message, e.filename, e.lineno);
+        var fb = document.getElementById('static-fallback');
+        if (fb && fb.style.display === 'none') fb.style.display = 'flex';
+      });
+    </script>
   </body>
 </html>
