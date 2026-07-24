@@ -27,3 +27,33 @@
   .fmf-card{backface-visibility:hidden}
 }
 
+
+/* === National Presence === */
+.fmf-presence{padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
+.fmf-presence::before{content:"";position:absolute;top:50%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(120,100,255,.06) 0%,transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
+.fmf-presence .overline{font-size:.85em;color:rgba(255,255,255,.4);letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px;font-weight:500}
+.fmf-presence h2{font-size:clamp(1.8em,4vw,2.8em);font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:.02em;line-height:1.3}
+.fmf-presence h2 span{background:linear-gradient(135deg,#a78bfa 0%,#60a5fa 50%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fmf-presence .subtitle{font-size:1em;color:rgba(255,255,255,.5);margin-bottom:60px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.fmf-presence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:900px;margin:0 auto 50px}
+.fmf-presence-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:40px 24px 30px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1)}
+.fmf-presence-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(120,100,255,.5),transparent);opacity:0;transition:opacity .4s ease}
+.fmf-presence-card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15);transform:translateY(-4px)}
+.fmf-presence-card:hover::before{opacity:1}
+.fmf-presence-card .city-icon{font-size:2.5em;margin-bottom:16px;display:block}
+.fmf-presence-card .city-name{font-size:1.3em;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:.05em}
+.fmf-presence-card .company-name{font-size:.85em;color:rgba(255,255,255,.5);margin-bottom:16px;line-height:1.5}
+.fmf-presence-card .tag{display:inline-block;font-size:.7em;color:rgba(255,255,255,.35);padding:4px 12px;border:1px solid rgba(255,255,255,.1);border-radius:20px;letter-spacing:.1em;text-transform:uppercase}
+.fmf-presence-stats{display:flex;justify-content:center;gap:60px;margin-top:40px;padding-top:40px;border-top:1px solid rgba(255,255,255,.06)}
+.fmf-presence-stats .stat{text-align:center}
+.fmf-presence-stats .stat-num{font-size:2.5em;font-weight:700;color:#fff;line-height:1;background:linear-gradient(135deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fmf-presence-stats .stat-label{font-size:.8em;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em}
+@media(max-width:768px){
+  .fmf-presence{padding:70px 16px 50px}
+  .fmf-presence-grid{grid-template-columns:1fr;gap:20px;max-width:320px}
+  .fmf-presence-card{padding:30px 20px 24px}
+  .fmf-presence-card .city-icon{font-size:2em;margin-bottom:12px}
+  .fmf-presence-card .city-name{font-size:1.1em}
+  .fmf-presence-stats{gap:30px;flex-wrap:wrap}
+  .fmf-presence-stats .stat-num{font-size:2em}
+}
